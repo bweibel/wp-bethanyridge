@@ -25,6 +25,7 @@ h5,
 h6 {
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
+	font-weight: normal;
 	clear: both;
 }
 
