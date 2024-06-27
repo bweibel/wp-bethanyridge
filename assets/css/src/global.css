@@ -192,11 +192,19 @@ select {
 }
 
 /*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+.page {
+	background-color: var(--color-theme-cream);
+}
+
+/*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 
 .site-header {
 	padding-bottom: 1em;
+	background-color: var(--color-theme-cream);
 }
 
 .header-image {
@@ -833,6 +841,8 @@ nav div.wp-block-navigation__responsive-dialog {
 	padding: 2em 0;
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
+	background-color: var(--color-theme-purple);
+	color: var(--color-theme-cream);
 }
 
 .site-info {

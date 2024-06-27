@@ -6,13 +6,13 @@
  **/
 
 :root {
-	--content-width: 45rem;
+	--content-width: 60rem;
 	--dropdown-symbol-width: 0.7em;
 
 	/* Typography */
 	--global-font-family: "BioRhyme", serif;
 	--highlight-font-family: "Pacifico", sans-serif;
-	--global-font-size: 20;
+	--global-font-size: 18;
 	--global-font-line-height: 1.4;
 
 	/* Custom editor font sizes */
