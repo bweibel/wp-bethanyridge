@@ -1,0 +1,20 @@
+{
+    "theme": {
+    "PHPNamespace": "WP_Rig\\WP_Rig",
+    "slug": "bethany-ridge",
+    "name": "Bethany Ridge Winery",
+    "theme_uri": "https://redtaildesign.com/",
+    "author": "Redtail Design",
+    "author_uri": "redtaildesign.com",
+    "description": "A custom wordpress theme for Bethany Ridge Winery",
+    "version": "1.0.0"
+  },
+  "dev": {
+    "browserSync": {
+      "live": true,
+      "proxyURL": "bethany-ridge-winery.local",
+      "bypassPort": "8181",
+      "https": false
+    }
+}
+}
