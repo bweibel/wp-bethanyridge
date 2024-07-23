@@ -74,6 +74,7 @@
 .site {
 	margin: 0 auto;
 	max-width: 100%;
+
 }
 
 @media (--sidebar-query) {
@@ -196,7 +197,13 @@ select {
 --------------------------------------------------------------*/
 .page {
 	background-color: var(--color-theme-cream);
+	background-image: url(../images/bethanyridgewinery_logo_tan.svg);
+    background-position: -100px center;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-attachment: fixed;
 }
+
 
 /*--------------------------------------------------------------
 # Header
@@ -204,8 +211,15 @@ select {
 
 .site-header {
 	padding-bottom: 1em;
-	background-color: var(--color-theme-cream);
+	display: grid;
+	grid-template-areas: 
+	"top-bar top-bar top-bar top-bar"
+	". logo social ."
+	". logo nav ."
+	"bottom-bar bottom-bar bottom-bar bottom-bar";
+	grid-template-columns: 1fr 175px 45rem 1fr;
 }
+
 
 .header-image {
 	margin: 0 auto;
@@ -222,8 +236,10 @@ select {
 }
 
 .site-branding {
+	grid-area: logo;
 	text-align: center;
-	padding: 60px 0 1.75em;
+	padding: 0;
+
 
 	@media screen and (max-width: 600px) {
 		padding: 1.75em 0;
@@ -256,6 +272,39 @@ select {
 	color: #757575;
 }
 
+
+@media (--wide-menu-query) {
+	.site-header::before {
+		content: '';
+		grid-area: top-bar;
+		min-height: 50px;
+		background-color: var(--color-theme-blue);
+		background-image: url(../images/tear_tan_bottom.svg);
+		background-repeat: repeat-x;
+		background-size: 1600px;
+		background-position: bottom;
+	}
+
+	.site-header {
+		padding-bottom: 0;
+		clip-path:  url(../images/tear_tan_top.svg);
+
+	}
+
+	.site-branding {
+	}
+
+	.main-navigation {
+		grid-area: nav;
+	}
+
+	.bottom-bar {
+		grid-area: bottom-bar;
+		min-height: 50px;
+	}
+}
+
+
 @media (--narrow-menu-query) {
 
 	header#masthead:has(nav) {
@@ -281,6 +330,10 @@ select {
 			}
 		}
 
+	}
+
+	.top-bar {
+		display: none;
 	}
 }
 
