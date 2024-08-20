@@ -213,13 +213,26 @@ select {
 	padding-bottom: 1em;
 	display: grid;
 	grid-template-areas: 
-	"top-bar top-bar top-bar top-bar"
-	". logo social ."
-	". logo nav ."
-	"bottom-bar bottom-bar bottom-bar bottom-bar";
-	grid-template-columns: 1fr 175px 45rem 1fr;
+	"top-bar top-bar top-bar "
+	". logo  nav"
+	". logo .";
+	grid-template-columns: 1fr minmax(10rem, 1fr) 4rem;;
 }
 
+.site-header::before {
+	content: '';
+	grid-area: top-bar;
+	min-height: 25px;
+	background-color: var(--color-theme-blue);
+	background-image: url(../images/tear_tan_bottom.svg);
+	background-repeat: repeat-x;
+	background-size: 1600px;
+	background-position: bottom;
+}
+
+.main-navigation {
+	grid-area: nav;
+}
 
 .header-image {
 	margin: 0 auto;
@@ -232,14 +245,18 @@ select {
 
 .custom-logo-link {
 	display: inline-block;
-	margin: 0 auto 1em;
+	margin: 0 auto;
 }
 
 .site-branding {
 	grid-area: logo;
 	text-align: center;
 	padding: 0;
-
+    padding: 1em 1em 0em 1em;
+    margin-bottom: -80px;
+    z-index: 1000;
+    background: var(--color-theme-cream);
+    border-radius: 60% 60% 65% 65%;
 
 	@media screen and (max-width: 600px) {
 		padding: 1.75em 0;
@@ -277,26 +294,29 @@ select {
 	.site-header::before {
 		content: '';
 		grid-area: top-bar;
-		min-height: 50px;
-		background-color: var(--color-theme-blue);
-		background-image: url(../images/tear_tan_bottom.svg);
-		background-repeat: repeat-x;
-		background-size: 1600px;
-		background-position: bottom;
+		min-height: 40px;
 	}
 
 	.site-header {
-		padding-bottom: 0;
-		clip-path:  url(../images/tear_tan_top.svg);
+		padding-bottom: 1em;
+		grid-template-areas: 
+		"top-bar top-bar top-bar top-bar"
+		". logo social ."
+		". logo nav ."
+		"bottom-bar bottom-bar bottom-bar bottom-bar";
+		grid-template-columns: 1fr 200px 45rem 1fr;
+	}
 
+	
+
+	.site-header {
+		padding-bottom: 0;
 	}
 
 	.site-branding {
 	}
 
-	.main-navigation {
-		grid-area: nav;
-	}
+	
 
 	.bottom-bar {
 		grid-area: bottom-bar;
@@ -309,7 +329,7 @@ select {
 
 	header#masthead:has(nav) {
 		display: grid;
-		grid-template-columns: 1fr 6fr;
+		grid-template-columns: 4rem minmax(10rem, 1fr) 4rem;
 
 		& .site-branding {
 			order: 2;
@@ -323,7 +343,6 @@ select {
 
 		& .main-navigation.nav--toggle-sub {
 			padding: initial;
-			margin: 1em 0;
 
 			& .menu-toggle.icon {
 				top: 0;
@@ -363,7 +382,6 @@ nav div.wp-block-navigation__responsive-dialog {
 		border: none;
 		position: relative;
 		top: 40px;
-		left: 5px;
 		display: none;
 
 		@media screen and (max-width: 600px) {
@@ -429,7 +447,8 @@ nav div.wp-block-navigation__responsive-dialog {
 				position: absolute;
 				z-index: -5;
 				background: #fff;
-				width: 100vw;
+				width: 100%;
+				max-width: 100vw;
 				top: 300px;
 				left: 0;
 				height: 200%;
@@ -624,10 +643,10 @@ nav div.wp-block-navigation__responsive-dialog {
 --------------------------------------------------------------*/
 .main-navigation {
 	display: block;
-	margin: 0 auto 2em;
+	margin: 0 auto;
 	padding: 0 1em;
 	max-width: var(--content-width);
-	font-family: var(--highlight-font-family);
+	/* font-family: var(--highlight-font-family); */
 	font-stretch: condensed;
 
 	& ul ul li {
@@ -900,6 +919,31 @@ nav div.wp-block-navigation__responsive-dialog {
 
 .site-info {
 	text-align: center;
+}
+
+/* 
+Helpers
+*/
+.torn-block {
+	mask: url(../images/tear_tan_bottom.svg) repeat-x bottom/1000px, url(../images/tear_tan_top.svg) repeat-x top/1000px, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+	margin-block: -20px;
+
+}
+
+.torn-top {
+	mask: url(../images/tear_tan_top.svg) repeat-x top/1000px, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+	margin-top: -20px;
+
+}
+
+.torn-bottom {
+	mask: url(../images/tear_tan_bottom.svg) repeat-x bottom/1000px, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+	margin-bottom: -20px;
+	overflow-y: hidden;
+	
 }
 
 /*--------------------------------------------------------------

@@ -160,11 +160,15 @@
 }
 
 .alignwide {
-	max-width: calc(50% + var(--content-width) / 2);
+	max-width: var(--content-width-wide);
 }
 
 .alignfull {
 	max-width: 100%;
+}
+
+.alignfull .alignwide {
+    margin-inline: auto;
 }
 
 .page-content > .alignleft,

@@ -7,6 +7,7 @@
 
 :root {
 	--content-width: 60rem;
+	--content-width-wide: 80rem;
 	--dropdown-symbol-width: 0.7em;
 
 	/* Typography */
