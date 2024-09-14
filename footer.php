@@ -13,8 +13,11 @@ namespace WP_Rig\WP_Rig;
 
 ?>
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer torn-top">
 		<?php get_template_part( 'template-parts/footer/info' ); ?>
+		<div class="donkey">
+			<img src="<?php echo get_theme_file_uri( '/assets/images/donkeycart.png' ); ?>" alt="" width="300px">
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

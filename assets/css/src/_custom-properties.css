@@ -14,7 +14,7 @@
 	--global-font-family: "BioRhyme", serif;
 	--highlight-font-family: "Pacifico", sans-serif;
 	--global-font-size: 18;
-	--global-font-line-height: 1.4;
+	--global-font-line-height: 1.6;
 
 	/* Custom editor font sizes */
 	--font-size-small: calc(16 / var(--global-font-size) * 1rem);

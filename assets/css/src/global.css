@@ -60,7 +60,8 @@
 	text-decoration: none;
 	top: 5px;
 	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
+	z-index: 100000;
+	/* Above WP toolbar. */
 }
 
 /* Do not show the outline on the skip link target. */
@@ -110,6 +111,7 @@
 textarea {
 	width: 100%;
 }
+
 /* stylelint-enable */
 
 /* stylelint-disable */
@@ -127,6 +129,7 @@ input[type="submit"] {
 	padding: 0.6em 1em 0.4em;
 	cursor: pointer;
 }
+
 /* stylelint-enable */
 
 button:hover,
@@ -198,10 +201,10 @@ select {
 .page {
 	background-color: var(--color-theme-cream);
 	background-image: url(../images/bethanyridgewinery_logo_tan.svg);
-    background-position: -100px center;
-    background-repeat: no-repeat;
-    background-size: 30%;
-    background-attachment: fixed;
+	background-position: -100px center;
+	background-repeat: no-repeat;
+	background-size: 30%;
+	background-attachment: fixed;
 }
 
 
@@ -212,11 +215,12 @@ select {
 .site-header {
 	padding-bottom: 1em;
 	display: grid;
-	grid-template-areas: 
-	"top-bar top-bar top-bar "
-	". logo  nav"
-	". logo .";
-	grid-template-columns: 1fr minmax(10rem, 1fr) 4rem;;
+	grid-template-areas:
+		"top-bar top-bar top-bar "
+		". logo  nav"
+		". logo .";
+	grid-template-columns: 1fr minmax(10rem, 1fr) 4rem;
+	;
 }
 
 .site-header::before {
@@ -252,11 +256,11 @@ select {
 	grid-area: logo;
 	text-align: center;
 	padding: 0;
-    padding: 1em 1em 0em 1em;
-    margin-bottom: -80px;
-    z-index: 1000;
-    background: var(--color-theme-cream);
-    border-radius: 60% 60% 65% 65%;
+	padding: 1em 1em 0em 1em;
+	margin-bottom: -80px;
+	z-index: 1000;
+	background: var(--color-theme-cream);
+	border-radius: 60% 60% 65% 65%;
 
 	@media screen and (max-width: 600px) {
 		padding: 1.75em 0;
@@ -299,24 +303,23 @@ select {
 
 	.site-header {
 		padding-bottom: 1em;
-		grid-template-areas: 
-		"top-bar top-bar top-bar top-bar"
-		". logo social ."
-		". logo nav ."
-		"bottom-bar bottom-bar bottom-bar bottom-bar";
+		grid-template-areas:
+			"top-bar top-bar top-bar top-bar"
+			". logo social ."
+			". logo nav ."
+			"bottom-bar bottom-bar bottom-bar bottom-bar";
 		grid-template-columns: 1fr 200px 45rem 1fr;
 	}
 
-	
+
 
 	.site-header {
 		padding-bottom: 0;
 	}
 
-	.site-branding {
-	}
+	.site-branding {}
 
-	
+
 
 	.bottom-bar {
 		grid-area: bottom-bar;
@@ -521,7 +524,7 @@ nav div.wp-block-navigation__responsive-dialog {
 	transition: transform 0.2s;
 }
 
-.nav--toggle-sub li.menu-item--toggled-on > button.dropdown-toggle .dropdown-symbol {
+.nav--toggle-sub li.menu-item--toggled-on>button.dropdown-toggle .dropdown-symbol {
 	transform: translateY(-50%) rotate(225deg);
 }
 
@@ -529,7 +532,7 @@ nav div.wp-block-navigation__responsive-dialog {
 	transition: transform 0.2s;
 }
 
-.nav--toggle-sub li.menu-item--toggled-on > button.wp-block-navigation-submenu__toggle svg {
+.nav--toggle-sub li.menu-item--toggled-on>button.wp-block-navigation-submenu__toggle svg {
 	transform: rotate(180deg);
 }
 
@@ -619,9 +622,9 @@ nav div.wp-block-navigation__responsive-dialog {
 	 * If the dropdown toggle is active with JS, then
 	 * we'll take care of showing the submenu with JS.
 	 */
-	.nav--toggle-sub li:hover > ul,
-	.nav--toggle-sub li.menu-item--toggled-on > ul,
-	.nav--toggle-sub li:not(.menu-item--has-toggle):focus > ul {
+	.nav--toggle-sub li:hover>ul,
+	.nav--toggle-sub li.menu-item--toggled-on>ul,
+	.nav--toggle-sub li:not(.menu-item--has-toggle):focus>ul {
 		display: block;
 	}
 
@@ -633,7 +636,7 @@ nav div.wp-block-navigation__responsive-dialog {
 	 * This selector needs to stay separated, otherwise submenus
 	 * will not be displayed with IE/Edge.
 	 */
-	.nav--toggle-sub li:not(.menu-item--has-toggle):focus-within > ul {
+	.nav--toggle-sub li:not(.menu-item--has-toggle):focus-within>ul {
 		display: block;
 	}
 }
@@ -671,8 +674,8 @@ nav div.wp-block-navigation__responsive-dialog {
 	text-decoration: underline;
 }
 
-.main-navigation .current-menu-item > a,
-.main-navigation .current-menu-ancestor > a {
+.main-navigation .current-menu-item>a,
+.main-navigation .current-menu-ancestor>a {
 	font-weight: 600;
 }
 
@@ -747,6 +750,7 @@ nav div.wp-block-navigation__responsive-dialog {
 		padding-left: 0;
 		margin-left: 0;
 	}
+
 	/* stylelint-enable */
 
 	.main-navigation ul ul li a {
@@ -910,40 +914,60 @@ nav div.wp-block-navigation__responsive-dialog {
 --------------------------------------------------------------*/
 .site-footer {
 	margin: 1em 0 0;
-	padding: 2em 0;
-	font-family: var(--highlight-font-family);
+	padding: 2em 0 0;
 	font-stretch: condensed;
 	background-color: var(--color-theme-purple);
 	color: var(--color-theme-cream);
+	position: relative;
 }
 
 .site-info {
+	width: 100%;
+	max-width: 100%;
 	text-align: center;
+	background-color: var(--color-theme-cream);
+}
+
+.site-info p {
+	margin: 0;
+}
+
+/* Cart */
+.site-footer .donkey {
+
 }
 
 /* 
 Helpers
 */
 .torn-block {
-	mask: url(../images/tear_tan_bottom.svg) repeat-x bottom/1000px, url(../images/tear_tan_top.svg) repeat-x top/1000px, linear-gradient(#000 0 0);
-    mask-composite: exclude;
-	margin-block: -20px;
+	mask: url(../svg/tear_tan_bottom.svg) repeat-x bottom/1000px, url(../svg/tear_tan_top.svg) repeat-x top/1000px, linear-gradient(#000 0 0);
+	mask-composite: exclude;
 
 }
 
 .torn-top {
 	mask: url(../images/tear_tan_top.svg) repeat-x top/1000px, linear-gradient(#000 0 0);
-    mask-composite: exclude;
-	margin-top: -20px;
+	mask-composite: exclude;
 
 }
 
 .torn-bottom {
 	mask: url(../images/tear_tan_bottom.svg) repeat-x bottom/1000px, linear-gradient(#000 0 0);
-    mask-composite: exclude;
-	margin-bottom: -20px;
+	mask-composite: exclude;
 	overflow-y: hidden;
-	
+}
+
+.overlap-top {
+	margin-top: -20px;
+}
+
+.overlap-bottom {
+	margin-bottom: -20px;
+}
+
+.overlap {
+	margin-block: -20px;
 }
 
 /*--------------------------------------------------------------
