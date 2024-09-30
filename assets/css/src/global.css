@@ -200,7 +200,7 @@ select {
 --------------------------------------------------------------*/
 .page {
 	background-color: var(--color-theme-cream);
-	background-image: url(../images/bethanyridgewinery_logo_tan.svg);
+	background-image: url(../svg/bethanyridgewinery_logo_tan.svg);
 	background-position: -100px center;
 	background-repeat: no-repeat;
 	background-size: 30%;
@@ -228,7 +228,7 @@ select {
 	grid-area: top-bar;
 	min-height: 25px;
 	background-color: var(--color-theme-blue);
-	background-image: url(../images/tear_tan_bottom.svg);
+	background-image: url(../svg/tear_tan_bottom.svg);
 	background-repeat: repeat-x;
 	background-size: 1600px;
 	background-position: bottom;
@@ -913,12 +913,14 @@ nav div.wp-block-navigation__responsive-dialog {
 # Footer
 --------------------------------------------------------------*/
 .site-footer {
+	display: grid;
 	margin: 1em 0 0;
 	padding: 2em 0 0;
 	font-stretch: condensed;
 	background-color: var(--color-theme-purple);
 	color: var(--color-theme-cream);
 	position: relative;
+	min-height: 300px;
 }
 
 .site-info {
@@ -933,8 +935,72 @@ nav div.wp-block-navigation__responsive-dialog {
 }
 
 /* Cart */
-.site-footer .donkey {
+.cart {
+    animation: moveHorizontally 30s ease-in-out infinite;
+    position: relative;
+    z-index: 100;
+}
 
+.cart-wrap {
+    overflow: hidden;
+    bottom: -110px;
+	padding-top: 10px;
+    position: relative;
+    z-index: 0;
+}
+
+.donkey {
+
+}
+
+.wheel {
+    top: -64px;
+    position: relative;
+    animation: wheelSpin 30s ease-in-out infinite;
+}
+
+@keyframes moveHorizontally {
+    0% { transform: translateX(-300px); }
+    10% { transform: translateX(5%); }
+    15% { transform: translateX(5%); }
+    35% { transform: translateX(30%); }
+    40% { transform: translateX(30%); }
+    60% { transform: translateX(60%); }
+    65% { transform: translateX(60%); }
+    85% { transform: translateX(90%); }
+    90% { transform: translateX(90%); }
+    100% { transform: translateX(120%); }
+}
+  
+@keyframes walkVertically {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes combinedMovement {
+    0% { transform: translate(-20%, 0); }
+    10% { transform: translate(5%, -2.5px); }
+    15% { transform: translate(5%, -5px); }
+    35% { transform: translate(30%, -2.5px); }
+    40% { transform: translate(30%, 0); }
+    60% { transform: translate(60%, -2.5px); }
+    65% { transform: translate(60%, -5px); }
+    85% { transform: translate(90%, -2.5px); }
+    90% { transform: translate(90%, 0); }
+    100% { transform: translate(120%, 0); }
+}
+
+@keyframes wheelSpin {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(180deg); }
+    15% { transform: rotate(180deg); }
+    35% { transform: rotate(540deg); }
+    40% { transform: rotate(540deg); }
+    60% { transform: rotate(900deg); }
+    65% { transform: rotate(900deg); }
+    85% { transform: rotate(1260deg); }
+    90% { transform: rotate(1260deg); }
+    100% { transform: rotate(1440deg); }
 }
 
 /* 
@@ -947,13 +1013,13 @@ Helpers
 }
 
 .torn-top {
-	mask: url(../images/tear_tan_top.svg) repeat-x top/1000px, linear-gradient(#000 0 0);
+	mask: url(../svg/tear_tan_top.svg) repeat-x top/1000px, linear-gradient(#000 0 0);
 	mask-composite: exclude;
 
 }
 
 .torn-bottom {
-	mask: url(../images/tear_tan_bottom.svg) repeat-x bottom/1000px, linear-gradient(#000 0 0);
+	mask: url(../svg/tear_tan_bottom.svg) repeat-x bottom/1000px, linear-gradient(#000 0 0);
 	mask-composite: exclude;
 	overflow-y: hidden;
 }
