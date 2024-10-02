@@ -28,6 +28,9 @@ use function dynamic_sidebar;
 class Component implements Component_Interface, Templating_Component_Interface {
 
 	const PRIMARY_SIDEBAR_SLUG = 'sidebar-1';
+	const FOOTER_WIDGET_SLUG1 = 'footer-1';
+	const FOOTER_WIDGET_SLUG2 = 'footer-2';
+	const FOOTER_WIDGET_SLUG3 = 'footer-3';
 
 	/**
 	 * Gets the unique identifier for the theme component.
@@ -71,6 +74,39 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Footer 1', 'wp-rig' ),
+				'id'            => static::FOOTER_WIDGET_SLUG1,
+				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'before_widget' => '<div id="%1$s" class=" %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Footer 2', 'wp-rig' ),
+				'id'            => static::FOOTER_WIDGET_SLUG2,
+				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Footer 3', 'wp-rig' ),
+				'id'            => static::FOOTER_WIDGET_SLUG3,
+				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',
 			)

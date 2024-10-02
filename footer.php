@@ -14,14 +14,20 @@ namespace WP_Rig\WP_Rig;
 ?>
 <div class="cart-wrap">
 	<div class="cart">
-			<img class="donkey" src="<?php echo get_theme_file_uri( '/assets/images/donkeycart.png' ); ?>" alt="" width="300px">
-			<img class="wheel" src="<?php echo get_theme_file_uri( '/assets/images/cartwheel.png' ); ?>" alt="" width="70px">
-		</div>
+		<img class="donkey" src="<?php echo get_theme_file_uri( '/assets/images/donkeycart.png' ); ?>" alt="" width="300px">
+		<img class="wheel" src="<?php echo get_theme_file_uri( '/assets/images/cartwheel.png' ); ?>" alt="" width="70px">
+	</div>
 </div>
-	<footer id="colophon" class="site-footer torn-top">
-		<?php get_template_part( 'template-parts/footer/info' ); ?>
-		
-	</footer><!-- #colophon -->
+<footer id="colophon" class="site-footer torn-top">
+	<div class="widget-wrap">
+	<?php dynamic_sidebar('footer-1'); ?>
+	<?php dynamic_sidebar('footer-2'); ?>
+	<?php dynamic_sidebar('footer-3'); ?>
+
+	</div>
+	<?php get_template_part( 'template-parts/footer/info' ); ?>
+	
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

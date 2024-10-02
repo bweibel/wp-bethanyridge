@@ -923,11 +923,21 @@ nav div.wp-block-navigation__responsive-dialog {
 	min-height: 300px;
 }
 
+.site-footer .widget-wrap {
+	display: flex;
+	justify-content: space-around;
+}
+
+.site-footer .widget-wrap>* {
+	flex-basis: 20em;
+}
+
 .site-info {
 	width: 100%;
 	max-width: 100%;
 	text-align: center;
 	background-color: var(--color-theme-cream);
+	color: var(--global-font-color);
 }
 
 .site-info p {
@@ -943,10 +953,10 @@ nav div.wp-block-navigation__responsive-dialog {
 
 .cart-wrap {
     overflow: hidden;
-    bottom: -110px;
-	padding-top: 10px;
+    bottom: -50px;
     position: relative;
     z-index: 0;
+	height: 120px;
 }
 
 .donkey {
