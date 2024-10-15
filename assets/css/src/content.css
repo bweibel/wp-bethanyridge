@@ -67,7 +67,8 @@
 
 .page-content > *,
 .entry-content > *,
-.entry-summary > * {
+.entry-summary > *,
+.woo-entry > * {
 	margin-right: auto;
 	margin-left: auto;
 	/* padding-right: 1.5rem;
@@ -91,6 +92,7 @@
 .page-header,
 .entry-header,
 .entry-footer,
+.woo-entry,
 .post-navigation,
 .page-navigation,
 .comments-area {

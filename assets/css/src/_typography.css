@@ -114,3 +114,7 @@ ins {
 big {
 	font-size: 125%;
 }
+
+.no-underline {
+	text-decoration: none;
+}

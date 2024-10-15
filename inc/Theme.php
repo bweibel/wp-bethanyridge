@@ -156,6 +156,8 @@ class Theme {
 			new Styles\Component(),
 			new Scripts\Component(),
 			new Excerpts\Component(),
+			new Woocommerce\Component(),
+			new Remove_Comments\Component()
 		);
 
 		if ( defined( 'JETPACK__VERSION' ) ) {
